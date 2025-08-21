@@ -1,0 +1,15 @@
+feature: "User Login"
+context:
+  - Web app with email+password login
+  - Lock after 5 failed attempts for 15 minutes
+  - Remember-me persists 30 days
+  - Password rules: >=8 chars, 1 digit, 1 special
+acceptance_criteria:
+  - Valid users can login and see dashboard
+  - Invalid password shows error, does not login
+  - Lockout after 5 failures; unlock after window
+  - Remember-me keeps session across restarts
+non_functional:
+  - Response under 500ms for happy path
+notes:
+  - Include at least one security negative test (SQLi-ish)
