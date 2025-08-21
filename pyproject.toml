@@ -1,0 +1,25 @@
+[project]
+name = "ai-testcase-generator"
+version = "0.1.0"
+description = "Generate structured test cases from natural language and render pytest files"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "openai>=1.40.0",
+  "pydantic>=2.7.0",
+  "pyyaml>=6.0.1",
+  "jinja2>=3.1.4",
+  "typer>=0.12.3",
+  "rich>=13.7.1",
+]
+
+[project.scripts]
+aitestgen = "ai_testgen.cli:app"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I"]
