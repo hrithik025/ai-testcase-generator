@@ -1,0 +1,5 @@
+aitestgen generate \
+  --in examples/login.feature.yaml \
+  --out tests/test_generated_login.py \
+  --model gpt-4o-mini \
+  --cases 8
